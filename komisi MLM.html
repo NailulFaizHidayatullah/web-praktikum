@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 4</title>
+</head>
+
+<body>
+  <div>Jumlah Orang:</div>
+    <input type="number" name="people" id="people">
+  <br>
+  <div>Penjualan:</div>
+  <input type="text" id="penjualan">
+  <br><br>
+  
+      <button onclick="showHasil()">Calculate</button>
+  
+  <script>
+  function showHasil(){
+  var people = document.getElementById("people").value;
+  var penjualan = parseInt(document.getElementById("penjualan").value);
+    komisi = 0.05;
+    
+    if(people > 50){
+      komisi = 0.15;
+    }else if(people >= 10){
+      if(penjualan < 1000000){
+        komisi = 0.1;
+      }else{
+        komisi = 0.125;
+      }
+    }else{
+      komisi;
+    }
+    
+    jumlahKomisi = penjualan * komisi;
+  window.alert("Komisi " + komisi * 100 +  "%, Jumlah Rp." + jumlahKomisi);
+}
+  </script>
+    </body>
+</html>
